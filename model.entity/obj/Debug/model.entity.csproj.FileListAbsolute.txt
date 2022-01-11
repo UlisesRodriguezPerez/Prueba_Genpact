@@ -1,0 +1,6 @@
+C:\Ulises\Genpact\Prueba_Genpact\model.entity\bin\Debug\model.entity.dll
+C:\Ulises\Genpact\Prueba_Genpact\model.entity\bin\Debug\model.entity.pdb
+C:\Ulises\Genpact\Prueba_Genpact\model.entity\obj\Debug\model.entity.csproj.AssemblyReference.cache
+C:\Ulises\Genpact\Prueba_Genpact\model.entity\obj\Debug\model.entity.csproj.CoreCompileInputs.cache
+C:\Ulises\Genpact\Prueba_Genpact\model.entity\obj\Debug\model.entity.dll
+C:\Ulises\Genpact\Prueba_Genpact\model.entity\obj\Debug\model.entity.pdb

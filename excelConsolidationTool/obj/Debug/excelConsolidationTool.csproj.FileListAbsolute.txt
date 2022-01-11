@@ -1,0 +1,13 @@
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\bin\Debug\excelConsolidationTool.exe.config
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\bin\Debug\excelConsolidationTool.exe
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\bin\Debug\excelConsolidationTool.pdb
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\obj\Debug\excelConsolidationTool.csproj.AssemblyReference.cache
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\obj\Debug\excelConsolidationTool.FormApplicationStart.resources
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\obj\Debug\excelConsolidationTool.Properties.Resources.resources
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\obj\Debug\excelConsolidationTool.csproj.GenerateResource.cache
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\obj\Debug\excelConsolidationTool.csproj.CoreCompileInputs.cache
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\obj\Debug\excelConsolidationTool.exe
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\obj\Debug\excelConsolidationTool.pdb
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\bin\Debug\model.entity.dll
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\bin\Debug\model.entity.pdb
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\obj\Debug\excelConsolidationTool.csproj.CopyComplete

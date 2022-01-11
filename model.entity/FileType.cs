@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace model.entity
 {
-    public class Class1
+    // This enumeration is for when more types of files are needed
+    public enum FileType
     {
+        EXCEL,
+        OTHERS
     }
 }
