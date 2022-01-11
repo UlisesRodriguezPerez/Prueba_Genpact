@@ -55,7 +55,7 @@ namespace excelConsolidationTool
                 SingletonInitialSetup.getInstance.PathFolderListening = txtFolderMonitor.Text;
                 SingletonInitialSetup.getInstance.PathFolderProcessingAndNotApplicableFiles = txtFolderForProcessedAndNotApplicableFiles.Text;
                 
-                FormListening formListening = new FormListening();
+                FormListening formListening = new FormListening(this);
                 formListening.Show();
 
                 this.Hide();

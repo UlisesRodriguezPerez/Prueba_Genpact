@@ -116,6 +116,7 @@ namespace excelConsolidationTool.Forms
             this.Controls.Add(this.pnlPrincipal);
             this.Name = "FormListening";
             this.Text = "FormListening";
+            this.Load += new System.EventHandler(this.FormListening_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.pnlPrincipal.ResumeLayout(false);
             this.tabControlFiles.ResumeLayout(false);

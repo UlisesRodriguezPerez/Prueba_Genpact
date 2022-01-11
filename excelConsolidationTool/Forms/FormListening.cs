@@ -13,8 +13,10 @@ namespace excelConsolidationTool.Forms
 {
     public partial class FormListening : Form
     {
-        public FormListening()
+        private FormApplicationStart applicationStart;
+        public FormListening(FormApplicationStart applicationStart)
         {
+            this.applicationStart = applicationStart;
             InitializeComponent();
             
             Folder folder = new Folder();
@@ -52,6 +54,17 @@ namespace excelConsolidationTool.Forms
             {
                 // Llamar no procesados
             }
+        }
+
+        private void FormListening_Load(object sender, EventArgs e)
+        {
+            this.FormClosed += new FormClosedEventHandler(closeForm);
+        }
+
+        private void closeForm(object sender, EventArgs e)
+        {
+            this.Hide();
+            applicationStart.Show();
         }
     }
 }
