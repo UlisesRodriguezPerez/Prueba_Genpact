@@ -51,14 +51,14 @@ namespace excelConsolidationTool
                 MessageBox.Show("Please select the folders");
             }
             else
-            {
-                SingletonInitialSetup initialSetup = new SingletonInitialSetup();
-                initialSetup.PathFolderListening = txtFolderMonitor.Text;
-                initialSetup.PathFolderProcessingAndNotApplicableFiles = txtFolderForProcessedAndNotApplicableFiles.Text;
-
+            { 
+                SingletonInitialSetup.getInstance.PathFolderListening = txtFolderMonitor.Text;
+                SingletonInitialSetup.getInstance.PathFolderProcessingAndNotApplicableFiles = txtFolderForProcessedAndNotApplicableFiles.Text;
+                
                 FormListening formListening = new FormListening();
                 formListening.Show();
-                this.Dispose();
+
+                this.Hide();
             }
         }
     }

@@ -9,25 +9,19 @@ namespace model.entity
 {
     public class Folder
     {
-        public Boolean createFolder(String path, String name)
+        public void createFolder(String path, String name)
         {
             string newFolderPathname = path + @"\" + name;
 
             try
             {
-                if (Directory.Exists(newFolderPathname))
-                {
-                    return false;
-                }
-                else
+                if (!Directory.Exists(newFolderPathname))
                 {
                     Directory.CreateDirectory(newFolderPathname);
-                    return true;
                 }
             }
             catch (Exception)
             {
-
                 throw;
             }
         }

@@ -15,21 +15,21 @@ namespace excelConsolidationTool.Forms
     {
         public FormListening()
         {
-            System.Console.WriteLine("1");
             InitializeComponent();
-            SingletonInitialSetup initialSetup = new SingletonInitialSetup();
+            
             Folder folder = new Folder();
-
-            System.Console.WriteLine("2");
 
             string nameFolderProcessedFiles = "Processed Files";
             string nameFolderNotApplicableFiles = "Not Applicable Files";
 
-            folder.createFolder(initialSetup.PathFolderProcessingAndNotApplicableFiles, nameFolderProcessedFiles);
-            folder.createFolder(initialSetup.PathFolderProcessingAndNotApplicableFiles, nameFolderNotApplicableFiles);
+            folder.createFolder(SingletonInitialSetup.getInstance.PathFolderProcessingAndNotApplicableFiles, nameFolderProcessedFiles);
+            
+            folder.createFolder(SingletonInitialSetup.getInstance.PathFolderProcessingAndNotApplicableFiles, nameFolderNotApplicableFiles);
 
-            initialSetup.PathFolderProcessedFiles = initialSetup.PathFolderProcessingAndNotApplicableFiles + nameFolderProcessedFiles;
-            initialSetup.PathFolderNotApplicableFiles = initialSetup.PathFolderProcessingAndNotApplicableFiles + nameFolderNotApplicableFiles;
+            SingletonInitialSetup.getInstance.PathFolderProcessedFiles = 
+                                    SingletonInitialSetup.getInstance.PathFolderProcessingAndNotApplicableFiles + nameFolderProcessedFiles;
+            SingletonInitialSetup.getInstance.PathFolderNotApplicableFiles = 
+                                    SingletonInitialSetup.getInstance.PathFolderProcessingAndNotApplicableFiles + nameFolderNotApplicableFiles;
 
         }
 
