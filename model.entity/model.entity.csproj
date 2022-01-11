@@ -45,7 +45,7 @@
     <Compile Include="ExcelFile.cs" />
     <Compile Include="FileFactoryProcessing.cs" />
     <Compile Include="Folder.cs" />
-    <Compile Include="InitialSetup.cs" />
+    <Compile Include="SingletonInitialSetup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

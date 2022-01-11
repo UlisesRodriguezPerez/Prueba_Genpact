@@ -44,7 +44,7 @@ namespace excelConsolidationTool
                 txtFolderForProcessedAndNotApplicableFiles.Text = "";
             }
         }
-
+        
         private void btnContinue_Click(object sender, EventArgs e)
         {
             if (txtFolderMonitor.Text == "" || txtFolderForProcessedAndNotApplicableFiles.Text == "") {
@@ -52,10 +52,13 @@ namespace excelConsolidationTool
             }
             else
             {
-                InitialSetup initialSetup = new InitialSetup(txtFolderMonitor.Text, txtFolderForProcessedAndNotApplicableFiles.Text);
+                SingletonInitialSetup initialSetup = new SingletonInitialSetup();
+                initialSetup.PathFolderListening = txtFolderMonitor.Text;
+                initialSetup.PathFolderProcessingAndNotApplicableFiles = txtFolderForProcessedAndNotApplicableFiles.Text;
+
                 FormListening formListening = new FormListening();
                 formListening.Show();
-                this.Hide();
+                this.Dispose();
             }
         }
     }

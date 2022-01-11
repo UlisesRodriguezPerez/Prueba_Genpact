@@ -11,3 +11,4 @@ C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\obj\Debug\excelConsolida
 C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\bin\Debug\model.entity.dll
 C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\bin\Debug\model.entity.pdb
 C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\obj\Debug\excelConsolidationTool.csproj.CopyComplete
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\obj\Debug\excelConsolidationTool.Forms.FormListening.resources

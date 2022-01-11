@@ -6,20 +6,31 @@ using System.Threading.Tasks;
 
 namespace model.entity
 {
-    public class InitialSetup
+    public class SingletonInitialSetup
     {
+        private static SingletonInitialSetup instance = null; // singleton
         private String pathFolderListening;
         private String pathFolderProcessingAndNotApplicableFiles;
+        private String pathFolderProcessedFiles;
+        private String pathFolderNotApplicableFiles;
 
-        public InitialSetup(string pathFolderListening, string pathFolderProcessingAndNotApplicableFiles)
+        public SingletonInitialSetup() { }
+
+        public static SingletonInitialSetup getInstance
         {
-            this.pathFolderListening = pathFolderListening;
-            this.pathFolderProcessingAndNotApplicableFiles = pathFolderProcessingAndNotApplicableFiles;
+            get
+            {
+                if(instance == null)
+                {
+                    instance = new SingletonInitialSetup();
+                }
+                return instance;
+            }
         }
 
         public string PathFolderListening { get => pathFolderListening; set => pathFolderListening = value; }
         public string PathFolderProcessingAndNotApplicableFiles { get => pathFolderProcessingAndNotApplicableFiles; set => pathFolderProcessingAndNotApplicableFiles = value; }
-    
-        
+        public string PathFolderProcessedFiles { get => pathFolderProcessedFiles; set => pathFolderProcessedFiles = value; }
+        public string PathFolderNotApplicableFiles { get => pathFolderNotApplicableFiles; set => pathFolderNotApplicableFiles = value; }
     }   
 }
