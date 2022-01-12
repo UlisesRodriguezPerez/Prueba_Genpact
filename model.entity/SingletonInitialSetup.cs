@@ -14,6 +14,7 @@ namespace model.entity
         private String pathFolderProcessedFiles;
         private String pathFolderNotApplicableFiles;
         private String pathFolderMasterWorkbook;
+        private String nameMasterWorkbook;
 
         public SingletonInitialSetup() { }
 
@@ -34,5 +35,6 @@ namespace model.entity
         public string PathFolderProcessedFiles { get => pathFolderProcessedFiles; set => pathFolderProcessedFiles = value; }
         public string PathFolderNotApplicableFiles { get => pathFolderNotApplicableFiles; set => pathFolderNotApplicableFiles = value; }
         public string PathFolderMasterWorkbook { get => pathFolderMasterWorkbook; set => pathFolderMasterWorkbook = value; }
+        public string NameMasterWorkbook { get => nameMasterWorkbook; set => nameMasterWorkbook = value; }
     }   
 }

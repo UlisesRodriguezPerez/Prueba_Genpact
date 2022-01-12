@@ -31,22 +31,24 @@ namespace excelConsolidationTool.Forms
             string nameFolderProcessedFiles = "Processed Files";
             string nameFolderNotApplicableFiles = "Not Applicable Files";
             string masterWorkbook = "Master Workbook";
+
             string pathFolderProcessingAndNotApplicableFiles = SingletonInitialSetup.getInstance.PathFolderProcessingAndNotApplicableFiles;
+            string pathFolderWatcher = SingletonInitialSetup.getInstance.PathFolderListening;
 
             folder.createFolder(pathFolderProcessingAndNotApplicableFiles, nameFolderProcessedFiles);
 
             folder.createFolder(pathFolderProcessingAndNotApplicableFiles, nameFolderNotApplicableFiles);
 
-            folder.createFolder(pathFolderProcessingAndNotApplicableFiles, masterWorkbook);
+            folder.createFolder(pathFolderWatcher, masterWorkbook);
 
             SingletonInitialSetup.getInstance.PathFolderProcessedFiles =
                                     pathFolderProcessingAndNotApplicableFiles + @"\" + nameFolderProcessedFiles;
             SingletonInitialSetup.getInstance.PathFolderNotApplicableFiles =
                                     pathFolderProcessingAndNotApplicableFiles + @"\" + nameFolderNotApplicableFiles;
-            SingletonInitialSetup.getInstance.PathFolderMasterWorkbook =
-                                    pathFolderProcessingAndNotApplicableFiles + @"\" + masterWorkbook;
+            SingletonInitialSetup.getInstance.PathFolderMasterWorkbook = pathFolderWatcher + @"\" + masterWorkbook;
 
             fileManager.loadHashVerifiedFiles();
+
 
         }
 
@@ -92,6 +94,7 @@ namespace excelConsolidationTool.Forms
         {
             this.Hide();
             applicationStart.Show();
+            MasterWorkbook.getInstance.masterWorkbook.closeFile();
         }
 
         public void writeFilesInListBox(System.Windows.Forms.ListBox listBox ,string[] listFiles)
@@ -116,6 +119,7 @@ namespace excelConsolidationTool.Forms
 
         private void fileSystemWatcherPrincipalFolder_Created(object sender, System.IO.FileSystemEventArgs e)
         {
+            fileManager.checkFiles();
             refreshTabPage();
         }
 

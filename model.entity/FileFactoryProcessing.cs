@@ -21,7 +21,12 @@ namespace model.entity
             {
                 case FileType.EXCEL:
                     ExcelFile excelFile = new ExcelFile(file);
-                    //excelFile.consolidateFile();
+                    
+                    // Not work
+                    excelFile.consolidateFile();
+
+
+                    excelFile.closeFile();
                     folder.moveFile(file, SingletonInitialSetup.getInstance.PathFolderProcessedFiles);
                     break;
                 case FileType.OTHER:

@@ -177,8 +177,9 @@ namespace excelConsolidationTool
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(567, 43);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Select the folder to monitor";
+            this.label1.Text = "Select the folder to watch";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // FormApplicationStart
             // 
