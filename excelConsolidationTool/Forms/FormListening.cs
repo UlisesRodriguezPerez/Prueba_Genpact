@@ -29,9 +29,9 @@ namespace excelConsolidationTool.Forms
             folder.createFolder(SingletonInitialSetup.getInstance.PathFolderProcessingAndNotApplicableFiles, nameFolderNotApplicableFiles);
 
             SingletonInitialSetup.getInstance.PathFolderProcessedFiles = 
-                                    SingletonInitialSetup.getInstance.PathFolderProcessingAndNotApplicableFiles + nameFolderProcessedFiles;
+                                    SingletonInitialSetup.getInstance.PathFolderProcessingAndNotApplicableFiles + @"\" + nameFolderProcessedFiles;
             SingletonInitialSetup.getInstance.PathFolderNotApplicableFiles = 
-                                    SingletonInitialSetup.getInstance.PathFolderProcessingAndNotApplicableFiles + nameFolderNotApplicableFiles;
+                                    SingletonInitialSetup.getInstance.PathFolderProcessingAndNotApplicableFiles + @"\" + nameFolderNotApplicableFiles;
 
         }
 
@@ -42,29 +42,59 @@ namespace excelConsolidationTool.Forms
 
         private void tabControlFiles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(tabControlFiles.SelectedTab == tabAllFiles)
+            refreshTabPage();
+        }
+
+        public void refreshTabPage()
+        {
+            Folder folder = new Folder();
+            string[] listFiles;
+            if (tabControlFiles.SelectedTab == tabAllFiles)
             {
-                // Llamar archivos de la carpeta principal
+                listFiles = folder.getFiles(SingletonInitialSetup.getInstance.PathFolderListening);
+                writeFilesInTextBox(listBoxAllFiles, listFiles);
             }
             else if (tabControlFiles.SelectedTab == tabprocessedFiles)
             {
-                // Llamar archivos procesados
+                listFiles = folder.getFiles(SingletonInitialSetup.getInstance.PathFolderProcessedFiles);
+                writeFilesInTextBox(listBoxProcessedFiles, listFiles);
             }
             else
             {
-                // Llamar no procesados
+                listFiles = folder.getFiles(SingletonInitialSetup.getInstance.PathFolderNotApplicableFiles);
+                writeFilesInTextBox(listBoxNotApplicableFiles, listFiles);
             }
         }
 
         private void FormListening_Load(object sender, EventArgs e)
         {
             this.FormClosed += new FormClosedEventHandler(closeForm);
+            fileSystemWatcherPrincipalFolder.Path = SingletonInitialSetup.getInstance.PathFolderListening;
         }
 
         private void closeForm(object sender, EventArgs e)
         {
             this.Hide();
             applicationStart.Show();
+        }
+
+        public void writeFilesInTextBox(System.Windows.Forms.ListBox listBox ,string[] listFiles)
+        {
+            listBox.Items.Clear();
+            foreach (var file in listFiles)
+            {
+                listBoxAllFiles.Items.Add(file);
+            }
+        }
+
+        private void fileSystemWatcherPrincipalFolder_Changed(object sender, System.IO.FileSystemEventArgs e)
+        {
+            refreshTabPage();
+        }
+
+        private void fileSystemWatcherPrincipalFolder_Renamed(object sender, System.IO.RenamedEventArgs e)
+        {
+            refreshTabPage();
         }
     }
 }

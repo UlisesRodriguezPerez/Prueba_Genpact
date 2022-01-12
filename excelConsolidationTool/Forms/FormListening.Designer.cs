@@ -29,22 +29,32 @@ namespace excelConsolidationTool.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.fileSystemWatcherPrincipalFolder = new System.IO.FileSystemWatcher();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.tabControlFiles = new System.Windows.Forms.TabControl();
             this.tabAllFiles = new System.Windows.Forms.TabPage();
             this.tabprocessedFiles = new System.Windows.Forms.TabPage();
             this.tabNotapplicable = new System.Windows.Forms.TabPage();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            this.listBoxAllFiles = new System.Windows.Forms.ListBox();
+            this.listBoxProcessedFiles = new System.Windows.Forms.ListBox();
+            this.listBoxNotApplicableFiles = new System.Windows.Forms.ListBox();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcherPrincipalFolder)).BeginInit();
             this.pnlPrincipal.SuspendLayout();
             this.tabControlFiles.SuspendLayout();
+            this.tabAllFiles.SuspendLayout();
+            this.tabprocessedFiles.SuspendLayout();
+            this.tabNotapplicable.SuspendLayout();
             this.SuspendLayout();
             // 
-            // fileSystemWatcher1
+            // fileSystemWatcherPrincipalFolder
             // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
+            this.fileSystemWatcherPrincipalFolder.EnableRaisingEvents = true;
+            this.fileSystemWatcherPrincipalFolder.SynchronizingObject = this;
+            this.fileSystemWatcherPrincipalFolder.Changed += new System.IO.FileSystemEventHandler(this.fileSystemWatcherPrincipalFolder_Changed);
+            this.fileSystemWatcherPrincipalFolder.Created += new System.IO.FileSystemEventHandler(this.fileSystemWatcherPrincipalFolder_Changed);
+            this.fileSystemWatcherPrincipalFolder.Deleted += new System.IO.FileSystemEventHandler(this.fileSystemWatcherPrincipalFolder_Changed);
+            this.fileSystemWatcherPrincipalFolder.Renamed += new System.IO.RenamedEventHandler(this.fileSystemWatcherPrincipalFolder_Renamed);
             // 
             // pnlPrincipal
             // 
@@ -80,6 +90,7 @@ namespace excelConsolidationTool.Forms
             // 
             // tabAllFiles
             // 
+            this.tabAllFiles.Controls.Add(this.listBoxAllFiles);
             this.tabAllFiles.Location = new System.Drawing.Point(4, 22);
             this.tabAllFiles.Name = "tabAllFiles";
             this.tabAllFiles.Padding = new System.Windows.Forms.Padding(3);
@@ -91,6 +102,7 @@ namespace excelConsolidationTool.Forms
             // 
             // tabprocessedFiles
             // 
+            this.tabprocessedFiles.Controls.Add(this.listBoxProcessedFiles);
             this.tabprocessedFiles.Location = new System.Drawing.Point(4, 22);
             this.tabprocessedFiles.Name = "tabprocessedFiles";
             this.tabprocessedFiles.Padding = new System.Windows.Forms.Padding(3);
@@ -101,12 +113,40 @@ namespace excelConsolidationTool.Forms
             // 
             // tabNotapplicable
             // 
+            this.tabNotapplicable.Controls.Add(this.listBoxNotApplicableFiles);
             this.tabNotapplicable.Location = new System.Drawing.Point(4, 22);
             this.tabNotapplicable.Name = "tabNotapplicable";
             this.tabNotapplicable.Size = new System.Drawing.Size(792, 329);
             this.tabNotapplicable.TabIndex = 2;
             this.tabNotapplicable.Text = "Not Applicable";
             this.tabNotapplicable.UseVisualStyleBackColor = true;
+            // 
+            // listBoxAllFiles
+            // 
+            this.listBoxAllFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxAllFiles.FormattingEnabled = true;
+            this.listBoxAllFiles.Location = new System.Drawing.Point(3, 3);
+            this.listBoxAllFiles.Name = "listBoxAllFiles";
+            this.listBoxAllFiles.Size = new System.Drawing.Size(786, 323);
+            this.listBoxAllFiles.TabIndex = 0;
+            // 
+            // listBoxProcessedFiles
+            // 
+            this.listBoxProcessedFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxProcessedFiles.FormattingEnabled = true;
+            this.listBoxProcessedFiles.Location = new System.Drawing.Point(3, 3);
+            this.listBoxProcessedFiles.Name = "listBoxProcessedFiles";
+            this.listBoxProcessedFiles.Size = new System.Drawing.Size(786, 323);
+            this.listBoxProcessedFiles.TabIndex = 0;
+            // 
+            // listBoxNotApplicableFiles
+            // 
+            this.listBoxNotApplicableFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxNotApplicableFiles.FormattingEnabled = true;
+            this.listBoxNotApplicableFiles.Location = new System.Drawing.Point(0, 0);
+            this.listBoxNotApplicableFiles.Name = "listBoxNotApplicableFiles";
+            this.listBoxNotApplicableFiles.Size = new System.Drawing.Size(792, 329);
+            this.listBoxNotApplicableFiles.TabIndex = 0;
             // 
             // FormListening
             // 
@@ -117,21 +157,27 @@ namespace excelConsolidationTool.Forms
             this.Name = "FormListening";
             this.Text = "FormListening";
             this.Load += new System.EventHandler(this.FormListening_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcherPrincipalFolder)).EndInit();
             this.pnlPrincipal.ResumeLayout(false);
             this.tabControlFiles.ResumeLayout(false);
+            this.tabAllFiles.ResumeLayout(false);
+            this.tabprocessedFiles.ResumeLayout(false);
+            this.tabNotapplicable.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.IO.FileSystemWatcher fileSystemWatcherPrincipalFolder;
         private System.Windows.Forms.Panel pnlPrincipal;
         private System.Windows.Forms.TabControl tabControlFiles;
         private System.Windows.Forms.TabPage tabAllFiles;
         private System.Windows.Forms.TabPage tabprocessedFiles;
         private System.Windows.Forms.TabPage tabNotapplicable;
         private System.Windows.Forms.Panel pnlTop;
+        private System.Windows.Forms.ListBox listBoxAllFiles;
+        private System.Windows.Forms.ListBox listBoxProcessedFiles;
+        private System.Windows.Forms.ListBox listBoxNotApplicableFiles;
     }
 }

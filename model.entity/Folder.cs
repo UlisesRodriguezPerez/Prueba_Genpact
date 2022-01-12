@@ -25,5 +25,11 @@ namespace model.entity
                 throw;
             }
         }
+
+        public string[] getFiles(string pathFolder)
+        {
+            string[] listFiles = Directory.GetFiles(pathFolder);
+            return listFiles;
+        }
     }
 }
