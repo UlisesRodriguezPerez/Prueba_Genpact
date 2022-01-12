@@ -18,6 +18,7 @@ namespace model.entity
                 if (!Directory.Exists(newFolderPathname))
                 {
                     Directory.CreateDirectory(newFolderPathname);
+                    
                 }
             }
             catch (Exception)
@@ -30,6 +31,12 @@ namespace model.entity
         {
             string[] listFiles = Directory.GetFiles(pathFolder);
             return listFiles;
+        }
+
+        public void moveFile(string file, string newLocationFile)
+        {
+            string fileName = Path.GetFileName(file);
+            File.Move(file, newLocationFile + @"\" + fileName);
         }
     }
 }

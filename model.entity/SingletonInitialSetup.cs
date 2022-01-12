@@ -13,6 +13,7 @@ namespace model.entity
         private String pathFolderProcessingAndNotApplicableFiles;
         private String pathFolderProcessedFiles;
         private String pathFolderNotApplicableFiles;
+        private String pathFolderMasterWorkbook;
 
         public SingletonInitialSetup() { }
 
@@ -32,5 +33,6 @@ namespace model.entity
         public string PathFolderProcessingAndNotApplicableFiles { get => pathFolderProcessingAndNotApplicableFiles; set => pathFolderProcessingAndNotApplicableFiles = value; }
         public string PathFolderProcessedFiles { get => pathFolderProcessedFiles; set => pathFolderProcessedFiles = value; }
         public string PathFolderNotApplicableFiles { get => pathFolderNotApplicableFiles; set => pathFolderNotApplicableFiles = value; }
+        public string PathFolderMasterWorkbook { get => pathFolderMasterWorkbook; set => pathFolderMasterWorkbook = value; }
     }   
 }

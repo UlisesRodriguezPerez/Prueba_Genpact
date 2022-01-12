@@ -34,7 +34,7 @@ namespace excelConsolidationTool.Forms
             this.pnlTop = new System.Windows.Forms.Panel();
             this.tabControlFiles = new System.Windows.Forms.TabControl();
             this.tabAllFiles = new System.Windows.Forms.TabPage();
-            this.tabprocessedFiles = new System.Windows.Forms.TabPage();
+            this.tabProcessedFiles = new System.Windows.Forms.TabPage();
             this.tabNotapplicable = new System.Windows.Forms.TabPage();
             this.listBoxAllFiles = new System.Windows.Forms.ListBox();
             this.listBoxProcessedFiles = new System.Windows.Forms.ListBox();
@@ -43,7 +43,7 @@ namespace excelConsolidationTool.Forms
             this.pnlPrincipal.SuspendLayout();
             this.tabControlFiles.SuspendLayout();
             this.tabAllFiles.SuspendLayout();
-            this.tabprocessedFiles.SuspendLayout();
+            this.tabProcessedFiles.SuspendLayout();
             this.tabNotapplicable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,8 +52,8 @@ namespace excelConsolidationTool.Forms
             this.fileSystemWatcherPrincipalFolder.EnableRaisingEvents = true;
             this.fileSystemWatcherPrincipalFolder.SynchronizingObject = this;
             this.fileSystemWatcherPrincipalFolder.Changed += new System.IO.FileSystemEventHandler(this.fileSystemWatcherPrincipalFolder_Changed);
-            this.fileSystemWatcherPrincipalFolder.Created += new System.IO.FileSystemEventHandler(this.fileSystemWatcherPrincipalFolder_Changed);
-            this.fileSystemWatcherPrincipalFolder.Deleted += new System.IO.FileSystemEventHandler(this.fileSystemWatcherPrincipalFolder_Changed);
+            this.fileSystemWatcherPrincipalFolder.Created += new System.IO.FileSystemEventHandler(this.fileSystemWatcherPrincipalFolder_Created);
+            this.fileSystemWatcherPrincipalFolder.Deleted += new System.IO.FileSystemEventHandler(this.fileSystemWatcherPrincipalFolder_Deleted);
             this.fileSystemWatcherPrincipalFolder.Renamed += new System.IO.RenamedEventHandler(this.fileSystemWatcherPrincipalFolder_Renamed);
             // 
             // pnlPrincipal
@@ -77,7 +77,7 @@ namespace excelConsolidationTool.Forms
             // tabControlFiles
             // 
             this.tabControlFiles.Controls.Add(this.tabAllFiles);
-            this.tabControlFiles.Controls.Add(this.tabprocessedFiles);
+            this.tabControlFiles.Controls.Add(this.tabProcessedFiles);
             this.tabControlFiles.Controls.Add(this.tabNotapplicable);
             this.tabControlFiles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlFiles.Location = new System.Drawing.Point(0, 95);
@@ -100,16 +100,16 @@ namespace excelConsolidationTool.Forms
             this.tabAllFiles.UseVisualStyleBackColor = true;
             this.tabAllFiles.Click += new System.EventHandler(this.tabAllFiles_Click);
             // 
-            // tabprocessedFiles
+            // tabProcessedFiles
             // 
-            this.tabprocessedFiles.Controls.Add(this.listBoxProcessedFiles);
-            this.tabprocessedFiles.Location = new System.Drawing.Point(4, 22);
-            this.tabprocessedFiles.Name = "tabprocessedFiles";
-            this.tabprocessedFiles.Padding = new System.Windows.Forms.Padding(3);
-            this.tabprocessedFiles.Size = new System.Drawing.Size(792, 329);
-            this.tabprocessedFiles.TabIndex = 1;
-            this.tabprocessedFiles.Text = "Processed";
-            this.tabprocessedFiles.UseVisualStyleBackColor = true;
+            this.tabProcessedFiles.Controls.Add(this.listBoxProcessedFiles);
+            this.tabProcessedFiles.Location = new System.Drawing.Point(4, 22);
+            this.tabProcessedFiles.Name = "tabProcessedFiles";
+            this.tabProcessedFiles.Padding = new System.Windows.Forms.Padding(3);
+            this.tabProcessedFiles.Size = new System.Drawing.Size(792, 329);
+            this.tabProcessedFiles.TabIndex = 1;
+            this.tabProcessedFiles.Text = "Processed";
+            this.tabProcessedFiles.UseVisualStyleBackColor = true;
             // 
             // tabNotapplicable
             // 
@@ -161,7 +161,7 @@ namespace excelConsolidationTool.Forms
             this.pnlPrincipal.ResumeLayout(false);
             this.tabControlFiles.ResumeLayout(false);
             this.tabAllFiles.ResumeLayout(false);
-            this.tabprocessedFiles.ResumeLayout(false);
+            this.tabProcessedFiles.ResumeLayout(false);
             this.tabNotapplicable.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -173,7 +173,7 @@ namespace excelConsolidationTool.Forms
         private System.Windows.Forms.Panel pnlPrincipal;
         private System.Windows.Forms.TabControl tabControlFiles;
         private System.Windows.Forms.TabPage tabAllFiles;
-        private System.Windows.Forms.TabPage tabprocessedFiles;
+        private System.Windows.Forms.TabPage tabProcessedFiles;
         private System.Windows.Forms.TabPage tabNotapplicable;
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.ListBox listBoxAllFiles;

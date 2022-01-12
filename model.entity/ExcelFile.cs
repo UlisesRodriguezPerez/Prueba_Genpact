@@ -29,7 +29,7 @@ namespace model.entity
             }
         }
 
-        public void saveFile(String newPath)
+        public void saveFile(String pathSave)
         {
             try
             {
@@ -41,7 +41,7 @@ namespace model.entity
             }
         }
 
-        public void processFile()
+        public void consolidateFile()
         {
 
         }

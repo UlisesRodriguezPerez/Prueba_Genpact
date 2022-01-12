@@ -10,6 +10,6 @@ namespace model.entity
     public enum FileType
     {
         EXCEL,
-        OTHERS
+        OTHER
     }
 }
