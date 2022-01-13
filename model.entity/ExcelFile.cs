@@ -1,21 +1,22 @@
 ﻿using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Excel = Microsoft.Office.Interop.Excel;
-// using Spire.Xls;
+using Spiree =  Spire.Xls;
 
 
 namespace model.entity
 {
     public class ExcelFile
     {
-        private String path;
+        private String pathFile;
         private Excel.Application excelFile = new Excel.Application();
         private Excel.Workbook workbook;
-        //private Excel.Worksheet worksheet_;
+        
         private List<Worksheet> sheets = new List<Worksheet>();
 
 
@@ -23,7 +24,7 @@ namespace model.entity
         {
             try
             {
-                this.path = path;
+                this.pathFile = path;
                 readWorkbook();
                 setSheets();
             }
@@ -57,7 +58,7 @@ namespace model.entity
         {
             try
             {
-                workbook = excelFile.Workbooks.Open(path);
+                workbook = excelFile.Workbooks.Open(pathFile);
             }
             catch
             {
@@ -66,35 +67,64 @@ namespace model.entity
             }
         }
 
+
+        // search a better way to do it
         public void closeFile()
         {
-            workbook.Close();
-            excelFile.Workbooks.Close();
+            try
+            {
+                workbook.Close();
+                excelFile.Workbooks.Close();
+            }
+            catch (IOException e)
+            {
+                System.Console.WriteLine("File is closed");
+                throw;
+            }
         }
+
 
         public void consolidateFile()
         {
-            Workbook masterWorkbook = MasterWorkbook.getInstance.masterWorkbook.workbook;
+            /*Workbook masterWorkbook = MasterWorkbook.getInstance.masterWorkbook.workbook;
             Excel.Worksheet worksheetCopy;
             Excel.Worksheet worksheetOrigin;
+            MasterWorkbook.getInstance.masterWorkbook.closeFile();*/
 
+            // Solution: https://www.nuget.org/packages/FreeSpire.XLS/
+            int sheetNumber = 0;
+            string fileName;
+            string pathFileMasterWorkbook = @"C:\Users\ulirp\Desktop\PruebaMonitor\Master Workbook\Master Workbook.xlsx";
+            
             foreach (Worksheet sheet in sheets)
             {
-                worksheetOrigin = (workbook.Application.ActiveWorkbook.Sheets[sheet.Index]);
+                System.Console.WriteLine(sheet.Name);
+                fileName = Path.GetFileNameWithoutExtension(pathFile);
+                Spiree.Workbook workbook_copy = new Spiree.Workbook();
+                workbook_copy.LoadFromFile(pathFile);
 
-                worksheetCopy = masterWorkbook.Application.Worksheets.Add();
+                //Get the specific worksheet
+                Spiree.Worksheet sheet1 = workbook_copy.Worksheets[sheetNumber];
 
-                masterWorkbook.Save();
+                //Load target Excel file
+                Spiree.Workbook workbook_master = new Spiree.Workbook();
 
-                //worksheetCopy = MasterWorkbook.getInstance.masterWorkbook.workbook.Worksheets[worksheetCopy.Index];
+                
+                workbook_master.LoadFromFile(pathFileMasterWorkbook);
 
-                //worksheetOrigin.Copy(worksheetCopy);
-  
+                //Coyp worhsheet from worbook 1 to workbook 2
+                Spiree.Worksheet sheet2 = workbook_master.Worksheets.AddCopy(sheet1);
+                sheet2.Name = "Copy_" + fileName + "_" + sheetNumber;
+
+                //Save workbook 2
+                workbook_master.Save(); // SaveToFile("Report.xlsx");
+
+                sheetNumber++;
+                
             }
-            //closeFile();
         }
 
-        public string Path { get => path; set => path = value; }
+        public string PathFile { get => pathFile; set => pathFile = value; }
 
 
     }

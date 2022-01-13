@@ -10,13 +10,14 @@ namespace model.entity
 {
     public class MasterWorkbook
     {
-        private String path = SingletonInitialSetup.getInstance.PathFolderMasterWorkbook + @"\" + SingletonInitialSetup.getInstance.NameMasterWorkbook;
+        //private String path = SingletonInitialSetup.getInstance.PathFolderMasterWorkbook + @"\" + SingletonInitialSetup.getInstance.NameMasterWorkbook;
+        private String path = @"C:\Users\ulirp\Desktop\PruebaMonitor\Master Workbook\Master Workbook.xlsx";
         private static MasterWorkbook instance = null; // singleton
         public ExcelFile masterWorkbook;
 
         public MasterWorkbook() {
 
-            path = @"C:\Users\ulirp\Desktop\PruebaMonitor\Master Workbook\Master Workbook.xlsx";
+            string path = @"C:\Users\ulirp\Desktop\PruebaMonitor\Master Workbook\Master Workbook.xlsx";
             
             try
             {

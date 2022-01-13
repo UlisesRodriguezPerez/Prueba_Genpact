@@ -94,7 +94,7 @@ namespace excelConsolidationTool.Forms
         {
             this.Hide();
             applicationStart.Show();
-            MasterWorkbook.getInstance.masterWorkbook.closeFile();
+            //MasterWorkbook.getInstance.masterWorkbook.closeFile();
         }
 
         public void writeFilesInListBox(System.Windows.Forms.ListBox listBox ,string[] listFiles)

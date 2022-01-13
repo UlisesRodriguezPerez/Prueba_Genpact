@@ -12,3 +12,10 @@ C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\bin\Debug\model.entity.d
 C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\bin\Debug\model.entity.pdb
 C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\obj\Debug\excelConsolidationTool.csproj.CopyComplete
 C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\obj\Debug\excelConsolidationTool.Forms.FormListening.resources
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\bin\Debug\Spire.XLS.dll
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\bin\Debug\Spire.License.dll
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\bin\Debug\Spire.Pdf.dll
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\bin\Debug\Microsoft.mshtml.dll
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\bin\Debug\Spire.XLS.xml
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\bin\Debug\Spire.License.xml
+C:\Ulises\Genpact\Prueba_Genpact\excelConsolidationTool\bin\Debug\Spire.Pdf.xml

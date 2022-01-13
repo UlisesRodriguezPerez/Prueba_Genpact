@@ -5,3 +5,11 @@ C:\Ulises\Genpact\Prueba_Genpact\model.entity\obj\Debug\model.entity.csproj.Core
 C:\Ulises\Genpact\Prueba_Genpact\model.entity\obj\Debug\model.entity.dll
 C:\Ulises\Genpact\Prueba_Genpact\model.entity\obj\Debug\model.entity.pdb
 C:\Ulises\Genpact\Prueba_Genpact\model.entity\obj\Debug\model.entity.csproj.ResolveComReference.cache
+C:\Ulises\Genpact\Prueba_Genpact\model.entity\bin\Debug\Spire.License.dll
+C:\Ulises\Genpact\Prueba_Genpact\model.entity\bin\Debug\Spire.Pdf.dll
+C:\Ulises\Genpact\Prueba_Genpact\model.entity\bin\Debug\Spire.XLS.dll
+C:\Ulises\Genpact\Prueba_Genpact\model.entity\bin\Debug\Microsoft.mshtml.dll
+C:\Ulises\Genpact\Prueba_Genpact\model.entity\bin\Debug\Spire.License.xml
+C:\Ulises\Genpact\Prueba_Genpact\model.entity\bin\Debug\Spire.Pdf.xml
+C:\Ulises\Genpact\Prueba_Genpact\model.entity\bin\Debug\Spire.XLS.xml
+C:\Ulises\Genpact\Prueba_Genpact\model.entity\obj\Debug\model.entity.csproj.CopyComplete
